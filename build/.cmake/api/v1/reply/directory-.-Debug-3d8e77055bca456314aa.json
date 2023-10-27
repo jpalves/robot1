@@ -1,0 +1,670 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install",
+			"ament_environment_hooks",
+			"_ament_cmake_python_register_environment_hook",
+			"ament_python_install_package",
+			"_ament_cmake_python_install_package",
+			"ament_index_register_resource",
+			"ament_cmake_environment_generate_package_run_dependencies_marker",
+			"include",
+			"ament_execute_extensions",
+			"ament_package",
+			"ament_cmake_environment_generate_parent_prefix_path_marker",
+			"ament_generate_package_environment",
+			"ament_index_register_package",
+			"_ament_package"
+		],
+		"files" : 
+		[
+			"/opt/ros/galactic/share/ament_cmake_core/cmake/environment_hooks/ament_environment_hooks.cmake",
+			"/opt/ros/galactic/share/ament_cmake_python/cmake/ament_cmake_python-extras.cmake",
+			"/opt/ros/galactic/share/ament_cmake_python/cmake/ament_python_install_package.cmake",
+			"CMakeLists.txt",
+			"/opt/ros/galactic/share/ament_cmake_core/cmake/index/ament_index_register_resource.cmake",
+			"/opt/ros/galactic/share/ament_cmake_core/cmake/environment/ament_cmake_environment_package_hook.cmake",
+			"/opt/ros/galactic/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake",
+			"/opt/ros/galactic/share/ament_cmake_core/cmake/core/ament_package.cmake",
+			"/opt/ros/galactic/share/ament_cmake_core/cmake/environment_hooks/ament_cmake_environment_hooks_package_hook.cmake",
+			"/opt/ros/galactic/share/ament_cmake_core/cmake/environment_hooks/ament_generate_package_environment.cmake",
+			"/opt/ros/galactic/share/ament_cmake_core/cmake/index/ament_index_register_package.cmake",
+			"/opt/ros/galactic/share/ament_cmake_core/cmake/index/ament_cmake_index_package_hook.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 3,
+				"line" : 8,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 38,
+				"parent" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 36,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 70,
+				"parent" : 3
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 87,
+				"parent" : 3
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 39,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 2,
+				"line" : 147,
+				"parent" : 6
+			},
+			{
+				"command" : 0,
+				"file" : 2,
+				"line" : 174,
+				"parent" : 6
+			},
+			{
+				"command" : 0,
+				"file" : 2,
+				"line" : 183,
+				"parent" : 6
+			},
+			{
+				"command" : 0,
+				"file" : 3,
+				"line" : 10,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 3,
+				"line" : 14,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 3,
+				"line" : 18,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 3,
+				"line" : 20,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 3,
+				"line" : 30,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 3,
+				"line" : 34,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 3,
+				"line" : 35,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 3,
+				"line" : 36,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 3,
+				"line" : 37,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 3,
+				"line" : 38,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 3,
+				"line" : 39,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 3,
+				"line" : 40,
+				"parent" : 0
+			},
+			{
+				"command" : 9,
+				"file" : 3,
+				"line" : 53,
+				"parent" : 0
+			},
+			{
+				"command" : 8,
+				"file" : 7,
+				"line" : 66,
+				"parent" : 22
+			},
+			{
+				"command" : 7,
+				"file" : 6,
+				"line" : 48,
+				"parent" : 23
+			},
+			{
+				"file" : 5,
+				"parent" : 24
+			},
+			{
+				"command" : 6,
+				"file" : 5,
+				"line" : 47,
+				"parent" : 25
+			},
+			{
+				"command" : 5,
+				"file" : 5,
+				"line" : 29,
+				"parent" : 26
+			},
+			{
+				"command" : 0,
+				"file" : 4,
+				"line" : 105,
+				"parent" : 27
+			},
+			{
+				"command" : 10,
+				"file" : 5,
+				"line" : 48,
+				"parent" : 25
+			},
+			{
+				"command" : 5,
+				"file" : 5,
+				"line" : 43,
+				"parent" : 29
+			},
+			{
+				"command" : 0,
+				"file" : 4,
+				"line" : 105,
+				"parent" : 30
+			},
+			{
+				"command" : 7,
+				"file" : 6,
+				"line" : 48,
+				"parent" : 23
+			},
+			{
+				"file" : 8,
+				"parent" : 32
+			},
+			{
+				"command" : 1,
+				"file" : 8,
+				"line" : 20,
+				"parent" : 33
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 70,
+				"parent" : 34
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 87,
+				"parent" : 34
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 70,
+				"parent" : 34
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 87,
+				"parent" : 34
+			},
+			{
+				"command" : 11,
+				"file" : 8,
+				"line" : 26,
+				"parent" : 33
+			},
+			{
+				"command" : 0,
+				"file" : 9,
+				"line" : 91,
+				"parent" : 39
+			},
+			{
+				"command" : 0,
+				"file" : 9,
+				"line" : 91,
+				"parent" : 39
+			},
+			{
+				"command" : 0,
+				"file" : 9,
+				"line" : 91,
+				"parent" : 39
+			},
+			{
+				"command" : 0,
+				"file" : 9,
+				"line" : 107,
+				"parent" : 39
+			},
+			{
+				"command" : 0,
+				"file" : 9,
+				"line" : 119,
+				"parent" : 39
+			},
+			{
+				"command" : 7,
+				"file" : 6,
+				"line" : 48,
+				"parent" : 23
+			},
+			{
+				"file" : 11,
+				"parent" : 45
+			},
+			{
+				"command" : 12,
+				"file" : 11,
+				"line" : 16,
+				"parent" : 46
+			},
+			{
+				"command" : 5,
+				"file" : 10,
+				"line" : 29,
+				"parent" : 47
+			},
+			{
+				"command" : 0,
+				"file" : 4,
+				"line" : 105,
+				"parent" : 48
+			},
+			{
+				"command" : 13,
+				"file" : 7,
+				"line" : 68,
+				"parent" : 22
+			},
+			{
+				"command" : 0,
+				"file" : 7,
+				"line" : 150,
+				"parent" : 50
+			},
+			{
+				"command" : 0,
+				"file" : 7,
+				"line" : 157,
+				"parent" : 50
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "share/robot1/environment",
+			"paths" : 
+			[
+				"build/ament_cmake_environment_hooks/pythonpath.sh"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "Unspecified",
+			"destination" : "share/robot1/environment",
+			"paths" : 
+			[
+				"build/ament_cmake_environment_hooks/pythonpath.dsv"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 7,
+			"component" : "Unspecified",
+			"destination" : "lib/python3/dist-packages/",
+			"paths" : 
+			[
+				"build/ament_cmake_python/robot1/robot1.egg-info"
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 8,
+			"component" : "Unspecified",
+			"destination" : "lib/python3/dist-packages/robot1",
+			"paths" : 
+			[
+				{
+					"from" : "robot1",
+					"to" : "."
+				}
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 9,
+			"component" : "Unspecified",
+			"type" : "code"
+		},
+		{
+			"backtrace" : 10,
+			"component" : "Unspecified",
+			"destination" : "lib/robot1",
+			"paths" : 
+			[
+				"robot1/cmd_pid.py"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 11,
+			"component" : "Unspecified",
+			"destination" : "lib/robot1",
+			"paths" : 
+			[
+				"robot1/imagem41.py"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 12,
+			"component" : "Unspecified",
+			"destination" : "lib/robot1",
+			"paths" : 
+			[
+				"robot1/simple_pid"
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 13,
+			"component" : "Unspecified",
+			"destination" : "lib/robot1",
+			"paths" : 
+			[
+				"robot1/mapeamento.py",
+				"robot1/db.py",
+				"robot1/robot_navigator.py",
+				"robot1/machines.py",
+				"robot1/insert_data.py"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 14,
+			"component" : "Unspecified",
+			"destination" : "share/robot1",
+			"paths" : 
+			[
+				"launch"
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 15,
+			"component" : "Unspecified",
+			"destination" : "share/robot1",
+			"paths" : 
+			[
+				"worlds"
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 16,
+			"component" : "Unspecified",
+			"destination" : "share/robot1",
+			"paths" : 
+			[
+				"rviz"
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 17,
+			"component" : "Unspecified",
+			"destination" : "share/robot1",
+			"paths" : 
+			[
+				"params"
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 18,
+			"component" : "Unspecified",
+			"destination" : "share/robot1",
+			"paths" : 
+			[
+				"maps"
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 19,
+			"component" : "Unspecified",
+			"destination" : "share/robot1",
+			"paths" : 
+			[
+				"urdf"
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 20,
+			"component" : "Unspecified",
+			"destination" : "share/robot1",
+			"paths" : 
+			[
+				"models"
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 21,
+			"component" : "Unspecified",
+			"destination" : "share/robot1",
+			"paths" : 
+			[
+				"resource"
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 28,
+			"component" : "Unspecified",
+			"destination" : "share/ament_index/resource_index/package_run_dependencies",
+			"paths" : 
+			[
+				"build/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/robot1"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 31,
+			"component" : "Unspecified",
+			"destination" : "share/ament_index/resource_index/parent_prefix_path",
+			"paths" : 
+			[
+				"build/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/robot1"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 35,
+			"component" : "Unspecified",
+			"destination" : "share/robot1/environment",
+			"paths" : 
+			[
+				"/opt/ros/galactic/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 36,
+			"component" : "Unspecified",
+			"destination" : "share/robot1/environment",
+			"paths" : 
+			[
+				"build/ament_cmake_environment_hooks/ament_prefix_path.dsv"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 37,
+			"component" : "Unspecified",
+			"destination" : "share/robot1/environment",
+			"paths" : 
+			[
+				"/opt/ros/galactic/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 38,
+			"component" : "Unspecified",
+			"destination" : "share/robot1/environment",
+			"paths" : 
+			[
+				"build/ament_cmake_environment_hooks/path.dsv"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 40,
+			"component" : "Unspecified",
+			"destination" : "share/robot1",
+			"paths" : 
+			[
+				"build/ament_cmake_environment_hooks/local_setup.bash"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 41,
+			"component" : "Unspecified",
+			"destination" : "share/robot1",
+			"paths" : 
+			[
+				"build/ament_cmake_environment_hooks/local_setup.sh"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 42,
+			"component" : "Unspecified",
+			"destination" : "share/robot1",
+			"paths" : 
+			[
+				"build/ament_cmake_environment_hooks/local_setup.zsh"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 43,
+			"component" : "Unspecified",
+			"destination" : "share/robot1",
+			"paths" : 
+			[
+				"build/ament_cmake_environment_hooks/local_setup.dsv"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 44,
+			"component" : "Unspecified",
+			"destination" : "share/robot1",
+			"paths" : 
+			[
+				"build/ament_cmake_environment_hooks/package.dsv"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 49,
+			"component" : "Unspecified",
+			"destination" : "share/ament_index/resource_index/packages",
+			"paths" : 
+			[
+				"build/ament_cmake_index/share/ament_index/resource_index/packages/robot1"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 51,
+			"component" : "Unspecified",
+			"destination" : "share/robot1/cmake",
+			"paths" : 
+			[
+				"build/ament_cmake_core/robot1Config.cmake",
+				"build/ament_cmake_core/robot1Config-version.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 52,
+			"component" : "Unspecified",
+			"destination" : "share/robot1",
+			"paths" : 
+			[
+				"package.xml"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	}
+}

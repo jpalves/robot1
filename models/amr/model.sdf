@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sdf version='1.7'>
+  <model name='amr'>
+    	<link name='base_footprint'>
+    		<self_collide>0</self_collide>
+      		<inertial>
+        		<pose>0 0 0 0 -0 0</pose>
+        		<mass>40.0302</mass>
+        		<inertia>
+          			<ixx>74,575</ixx>
+          			<ixy>0</ixy>
+          			<ixz>0</ixz>
+          			<iyy>105,8</iyy>
+          			<iyz>-8.84532e-14</iyz>
+          			<izz>74.575</izz>
+        		</inertia>
+        	</inertial>
+        	<enable_wind>0</enable_wind>
+        	<kinematic>0</kinematic>
+      	</link>
+      
+      	<joint name='base_link_joint' type='fixed'>
+      		<pose relative_to='base_footprint'>0.235 0.025 0.033 0 0 1.5708</pose>
+      		<parent>base_footprint</parent>
+      		<child>base_link</child>
+      	</joint>
+    
+    	<link name='base_link'>
+      		<collision name='base_link_collision'>
+        		<pose>0 0 0.1625 0 -0 0</pose>
+        		<geometry>
+          			<cylinder>
+            				<length>0.255</length>
+            				<radius>0.23</radius>
+          			</cylinder>
+        		</geometry>
+      		</collision>
+      		<visual name='base_link_visual'>
+        		<pose>0.235 0.025 0.033 0 0 1.5708</pose>
+        		<geometry>
+          			<mesh>
+            				<uri>model://amr/meshes/ROBOTSEMNADA.dae</uri>
+          			</mesh>
+        		</geometry>
+        	</visual>
+        <visual name='base_link_fixed_joint_lump__guia_link_visual'>
+        <pose>0 0 0.285 0 0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://amr/meshes/torre001.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      
+      </link>
+      
+      <joint name='camera_joint' type='fixed'>
+      		<pose relative_to='base_link'>0.23 0 0.15 0 -0 0</pose>
+      		<parent>base_link</parent>
+      		<child>camera_link</child>
+      </joint>
+      
+      <link name='camera_link'>
+      		<pose relative_to='camera_joint'>0 0 0 0 -0 0</pose>
+      
+      		<sensor type="camera" name="color">
+      			<update_rate>30.0</update_rate>
+      			<camera name="head">
+      				<pose>0  0  0 0 0 0</pose>
+        			<horizontal_fov>1.3962634</horizontal_fov>
+        			<image>
+          				<width>1280</width>
+          				<height>720</height>
+          				<format>R8G8B8</format>
+        			</image>
+        			<clip>
+          				<near>0.02</near>
+          				<far>300</far>
+        			</clip>
+        			<noise>
+          				<type>gaussian</type>
+               			<!--Noise is sampled independently per pixel on each frame.
+               			That pixel's noise value is added to each of its color
+               			channels, which at that point lie in the range [0,1].-->
+          				<mean>0.0</mean>
+          				<stddev>0.007</stddev>
+        			</noise>
+      			</camera>
+      			<plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        			<alwaysOn>true</alwaysOn>
+        			<updateRate>0.0</updateRate>
+        			<cameraName>camera1</cameraName>
+        			<imageTopicName>image_raw</imageTopicName>
+        			<cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        			<frameName>camera_rgb_optical_frame</frameName>
+        			<hackBaseline>0.07</hackBaseline>
+        			<distortionK1>0.0</distortionK1>
+        			<distortionK2>0.0</distortionK2>
+        			<distortionK3>0.0</distortionK3>
+        			<distortionT1>0.0</distortionT1>
+        			<distortionT2>0.0</distortionT2>
+      			</plugin>
+    		</sensor>
+    		<collision name='camera_link_collision'>
+       		<pose>0 0 0 0 -0 0</pose>
+        		<geometry>
+          			<sphere>
+            				<radius>0.054</radius>
+          			</sphere>
+        		</geometry>
+      		</collision> 
+      		<visual name='camera_link_visual'>
+        		<pose>0 0 0 1.57 0 1.57</pose>
+        		<geometry>
+          			<mesh>
+            				<scale>1 1 1</scale>
+            				<uri>model://amr/meshes/d435.dae</uri>
+          			</mesh>
+        		</geometry>
+      		</visual>	  
+      	</link>
+    	
+    	<joint name='lidar_joint' type='fixed'>
+      		<pose relative_to='base_footprint'>0.165 0 0.24 0 -0 0</pose>
+      		<parent>base_link</parent>
+      		<child>lidar_link</child>
+    	</joint>
+    
+      	<link name='lidar_link'>
+        	<collision name='lidar_sensor_collision'>
+          		<pose>0.165 0 0.24 0 -0 0</pose>
+          		<geometry>
+            			<cylinder>
+              				<radius>0.04</radius>
+              				<length>0.02</length>
+            			</cylinder>
+          		</geometry>
+          		<!--<surface>
+            			<contact>
+              				<ode/>
+            			</contact>
+            				<bounce/>
+            			<friction>
+              				<torsional>
+                				<ode/>
+              				</torsional>
+              					<ode/>
+            			</friction>
+          		</surface>
+          		<max_contacts>10</max_contacts>-->
+        	</collision>
+      		<visual name='lidar_sensor_visual'>
+        		<pose>0.165 0 0.24 0 -0 0</pose>
+        		<geometry>
+          			<cylinder>
+            				<length>0.04</length>
+            				<radius>0.02</radius>
+          			</cylinder>
+        		</geometry>
+      		</visual>
+      		<sensor name='hls_lfcd_lds' type='ray'>
+          		<always_on>1</always_on>
+          		<visualize>1</visualize>
+          		<pose>0.165 0 0.24 0 -0 0</pose>
+          		<update_rate>5</update_rate>
+          		<ray>
+            			<scan>
+              				<horizontal>
+                				<samples>360</samples>
+                				<resolution>1</resolution>
+                				<min_angle>1.57</min_angle>
+                				<max_angle>-1.57</max_angle>
+              				</horizontal>
+              				<vertical>
+                				<samples>1</samples>
+                				<min_angle>0</min_angle>
+                				<max_angle>0</max_angle>
+              				</vertical>
+            			</scan>
+            			<range>
+              				<min>0.32</min>
+              				<max>20.5</max>
+              				<resolution>0.015</resolution>
+            			</range>
+            			<noise>
+              				<type>gaussian</type>
+              				<mean>0</mean>
+              				<stddev>0.01</stddev>
+            			</noise>
+          		</ray>
+          		<plugin name='amr_laserscan' filename='libgazebo_ros_ray_sensor.so'>
+            			<ros>
+              				<remapping>~/out:=scan</remapping>
+            			</ros>
+            			<output_type>sensor_msgs/LaserScan</output_type>
+            			<frame_name>base_scan</frame_name>
+          		</plugin>
+        	</sensor>
+    </link>
+  
+    <!--isto está errado torna o robot instável-->  
+    <joint name='pega_joint' type='fixed'>
+    		<pose relative_to='base_footprint'>0 0 0.44 0 0 3.1415927</pose>
+      		<parent>base_link</parent>
+      		<child>pega_link</child>
+    </joint>
+  
+    <link name='pega_link'>
+      		<pose relative_to='base_footprint'>0 0 0.44 0 0 3.1415927</pose>
+      <!--<inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>10.000</mass>
+        <inertia>
+        <ixx>0.0025349</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0025349</iyy>
+          <iyz>0</iyz>
+          <izz>0.00340312</izz>
+          </inertia>
+      </inertial>-->
+      		<collision name='pega_link_collision'>
+        		<pose>0 0 0 0 0 0</pose>
+        		<geometry>
+          			<!--<mesh>
+            				<uri>model://amr/meshes/pega001.dae</uri>
+          			</mesh>-->
+         			<cylinder>
+              				<radius>0.04</radius>
+              				<length>0.02</length>
+            			</cylinder>
+        		</geometry>
+      		</collision>
+      		<visual name='pega_link_visual'>
+        		<pose>-.2 0 0 1.57 0 0</pose>
+        		<geometry>
+          			<mesh>
+            				<scale>1 1 1</scale>
+            				<uri>model://amr/meshes/pega001.dae</uri>
+          			</mesh>
+        		</geometry>
+      		</visual>
+    </link>
+    
+    <joint name='fcaster_joint' type='ball'>
+      <pose relative_to='base_footprint'>0.135 0 -0.001 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>fcaster_link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+          <effort>1</effort>
+          <velocity>5</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    
+    <link name='fcaster_link'>
+      <pose relative_to='fcaster_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 1.5708 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.0025349</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0025349</iyy>
+          <iyz>0</iyz>
+          <izz>0.00340312</izz>
+        </inertia>
+      </inertial>
+      <collision name='fcaster_link_collision'>
+        <pose>0 0 0.056 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.054</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <visual name='fcaster_link_visual'>
+        <pose>0 0 0 0 -0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://amr/meshes/amr_caster.dae</uri>
+          </mesh>
+          <!--<sphere>
+            <radius>0.054</radius>
+          </sphere>-->
+        </geometry>
+      </visual>
+    </link>
+    
+    <joint name='lcaster_joint' type='ball'>
+      <pose relative_to='base_footprint'>-0.135 0 -0.0005 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>lcaster_link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+          <effort>1</effort>
+          <velocity>5</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    
+    <link name='lcaster_link'>
+      <pose relative_to='lcaster_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 1.5708 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.0025349</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0025349</iyy>
+          <iyz>0</iyz>
+          <izz>0.00340312</izz>
+        </inertia>
+      </inertial>
+      <collision name='lcaster_link_collision'>
+        <pose>0 0 0.056 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.054</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <visual name='lcaster_link_visual'>
+        <pose>0 0 0 0 -0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://amr/meshes/amr_caster.dae</uri>
+          </mesh>
+          <!--<sphere>
+            <radius>0.054</radius>
+          </sphere>-->
+        </geometry>
+      </visual>
+    </link>
+    
+    <joint name='lwheel_joint' type='revolute'>
+      <pose relative_to='base_footprint'>0 0.1825 0.0825 -1.5708 0 0</pose>
+      <parent>base_link</parent>
+      <child>lwheel_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+          <effort>1</effort>
+          <velocity>5</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lwheel_link'>
+      <pose relative_to='lwheel_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>10.05</mass>
+        <inertia>
+          <ixx>0.00117223</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.17223</iyy>
+          <iyz>0</iyz>
+          <izz>0.00117223</izz>
+        </inertia>
+      </inertial>
+      <collision name='lwheel_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0435</length>
+            <radius>0.0825</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='lwheel_link_visual'>
+        <pose>0 0 0 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://amr/meshes/amr_wheel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <!--
+    <joint name='rcaster_joint' type='ball'>
+      <pose relative_to='base_footprint'>-0.135 -0.105 0 0 -0 0</pose>
+      <parent>base_footprint</parent>
+      <child>rcaster_link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+          <effort>1</effort>
+          <velocity>5</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    
+    <link name='rcaster_link'>
+      <pose relative_to='rcaster_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 1.5708 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.0025349</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0025349</iyy>
+          <iyz>0</iyz>
+          <izz>0.00340312</izz>
+        </inertia>
+      </inertial>
+      <collision name='rcaster_link_collision'>
+        <pose>0 0 0.056 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.054</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <visual name='rcaster_link_visual'>
+        <pose>0 0 0 0 -0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://amr/meshes/amr_caster.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    -->
+    <joint name='rwheel_joint' type='revolute'>
+      <pose relative_to='base_footprint'>0 -0.1825 0.0825 1.5708 -0 0</pose>
+      <parent>base_link</parent>
+      <child>rwheel_link</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+          <effort>1</effort>
+          <velocity>5</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rwheel_link'>
+      <pose relative_to='rwheel_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>10.05</mass>
+        <inertia>
+          <ixx>0.00117223</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.17223</iyy>
+          <iyz>0</iyz>
+          <izz>0.00117223</izz>
+        </inertia>
+      </inertial>
+      <collision name='rwheel_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0435</length>
+            <radius>0.0825</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='rwheel_link_visual'>
+        <pose>0 0 0 1.5708 -0 0</pose>
+        <geometry>
+          <!--<mesh>
+            <scale>1 1 1</scale>
+            <uri>model://amr/meshes/amr_wheel.dae</uri>
+          </mesh>-->
+          <sphere>
+            <radius>0.054</radius>
+          </sphere>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='imu_joint' type='fixed'>
+      <pose relative_to='base_footprint'>0.165 0 0.24 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>imu_link</child>
+      <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+    </joint>
+    <link name='imu_link'>
+        <sensor name='tb3_imu' type='imu'>
+          <always_on>1</always_on>
+          <update_rate>200</update_rate>
+          <imu>
+            <angular_velocity>
+              <x>
+                <noise type='gaussian'>
+                  <mean>0</mean>
+                  <stddev>0.0002</stddev>
+                </noise>
+              </x>
+              <y>
+                <noise type='gaussian'>
+                  <mean>0</mean>
+                  <stddev>0.0002</stddev>
+                </noise>
+              </y>
+              <z>
+                <noise type='gaussian'>
+                  <mean>0</mean>
+                  <stddev>0.0002</stddev>
+                </noise>
+              </z>
+            </angular_velocity>
+            <linear_acceleration>
+              <x>
+                <noise type='gaussian'>
+                  <mean>0</mean>
+                  <stddev>0.017</stddev>
+                </noise>
+              </x>
+              <y>
+                <noise type='gaussian'>
+                  <mean>0</mean>
+                  <stddev>0.017</stddev>
+                </noise>
+              </y>
+              <z>
+                <noise type='gaussian'>
+                  <mean>0</mean>
+                  <stddev>0.017</stddev>
+                </noise>
+              </z>
+            </linear_acceleration>
+          </imu>
+          <plugin name='amr_imu' filename='libgazebo_ros_imu_sensor.so'>
+            <ros>
+              <remapping>~/out:=imu</remapping>
+            </ros>
+          </plugin>
+        </sensor>
+        <self_collide>0</self_collide>
+        <!--<inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>-->
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    
+    <plugin name='amr_diff_drive' filename='libgazebo_ros_diff_drive.so'>
+        <update_rate>30</update_rate>
+        <left_joint>lwheel_joint</left_joint>
+        <right_joint>rwheel_joint</right_joint>
+        <wheel_separation>0.365</wheel_separation>
+        <wheel_diameter>0.165</wheel_diameter>
+        <max_wheel_torque>20</max_wheel_torque>
+        <max_wheel_acceleration>1.0</max_wheel_acceleration>
+        <command_topic>cmd_vel</command_topic>
+        <odometry_topic>odom</odometry_topic>
+        <odometry_frame>odom</odometry_frame>
+        <robot_base_frame>base_footprint</robot_base_frame>
+        <!-- topic & remappings -->
+        <ros>
+   		<remapping>/cmd_vel:=diff_drive/cmd_vel</remapping>
+  	</ros>
+  	<publish_odom>1</publish_odom>
+        <publish_odom_tf>1</publish_odom_tf>
+        <publish_wheel_tf>0</publish_wheel_tf>
+    </plugin>
+    <plugin name='amr_joint_state' filename='libgazebo_ros_joint_state_publisher.so'>
+        <ros>
+          <remapping>~/out:=joint_states</remapping>
+        </ros>
+        <update_rate>30</update_rate>
+        <joint_name>lwheel_joint</joint_name>
+        <joint_name>rwheel_joint</joint_name>
+      </plugin>
+  </model>
+</sdf>

@@ -1,0 +1,11 @@
+/home/jpalves/galactic_ws/src/robot1/build/CMakeFiles/uninstall.dir
+/home/jpalves/galactic_ws/src/robot1/build/CMakeFiles/robot1_uninstall.dir
+/home/jpalves/galactic_ws/src/robot1/build/CMakeFiles/ament_cmake_python_copy_robot1.dir
+/home/jpalves/galactic_ws/src/robot1/build/CMakeFiles/ament_cmake_python_build_robot1_egg.dir
+/home/jpalves/galactic_ws/src/robot1/build/CMakeFiles/test.dir
+/home/jpalves/galactic_ws/src/robot1/build/CMakeFiles/edit_cache.dir
+/home/jpalves/galactic_ws/src/robot1/build/CMakeFiles/rebuild_cache.dir
+/home/jpalves/galactic_ws/src/robot1/build/CMakeFiles/list_install_components.dir
+/home/jpalves/galactic_ws/src/robot1/build/CMakeFiles/install.dir
+/home/jpalves/galactic_ws/src/robot1/build/CMakeFiles/install/local.dir
+/home/jpalves/galactic_ws/src/robot1/build/CMakeFiles/install/strip.dir
