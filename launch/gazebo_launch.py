@@ -52,9 +52,9 @@ def generate_launch_description():
 
     declare_world_cmd = DeclareLaunchArgument(
         "world",
-        default_value=os.path.join(sm_dance_bot_dir, "worlds", "trico.world"),
+        default_value=os.path.join(sm_dance_bot_dir, "worlds", "hospital.world"),
         description="Full path to world model file to load",
-        #condition=IfCondition(show_gz_lidar),
+        condition=IfCondition(show_gz_lidar),
     )
 
     #declare_world_cmd_2 = DeclareLaunchArgument(
@@ -80,7 +80,7 @@ def generate_launch_description():
         #env= gzenv,
         cwd=[launch_dir],
         output="screen",
-        prefix=xtermprefix,
+        #prefix=xtermprefix,
     )
 
     start_gazebo_client_cmd = ExecuteProcess(

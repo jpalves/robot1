@@ -12,7 +12,7 @@ install(PROGRAMS
   DESTINATION lib/${PROJECT_NAME}
 )
 install(PROGRAMS
-  ${PROJECT_NAME}/imagem41.py
+  ${PROJECT_NAME}/imagem42.py
   DESTINATION lib/${PROJECT_NAME}
 )
 install(DIRECTORY ${PROJECT_NAME}/simple_pid DESTINATION lib/${PROJECT_NAME})

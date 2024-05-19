@@ -1,18 +1,16 @@
 #!/usr/bin/env python3
 import rclpy
 
-from rclpy.node import Node
 from geometry_msgs.msg import Twist
 from simple_pid import PID
-from geometry_msgs.msg import PoseStamped
 
 import time
 import math
 
 g_node = None
 
-pid_v = PID( .2, 0, 0.002, setpoint=0.0)
-pid_z = PID( 0.4, 0, 0.001, setpoint=0.0)
+pid_v = PID( .9, 0, 0.0, setpoint=0.0)
+pid_z = PID( .9, 0, 0.0, setpoint=0.0)
 
 start_time = time.time()
 last_time = start_time
@@ -22,7 +20,7 @@ pid_z.output_limits =(-1.0,1.0)
 
 def callback(data):
      twist   = Twist()
-     global start_time, last_time, navigator
+     global start_time, last_time
      current_time = time.time()
      dt = current_time - last_time
      
@@ -41,7 +39,7 @@ def callback(data):
      else:
         twist.angular.z = -pid_z.__call__(data.angular.z,dt)
 
-     rclpy.logging.get_logger('angular <-').info(str(twist.angular.z)+" [inear <-]: "+str(twist.linear.x))   
+     rclpy.logging.get_logger('angular <-').info(str(twist.angular.z)+" inear <-: "+str(twist.linear.x))   
      pub.publish(twist)
      last_time = current_time
      
@@ -52,8 +50,8 @@ def main(args=None):
 	rclpy.init(args=args)
 	
 	g_node = rclpy.create_node('subscriber')
-	pub = g_node.create_publisher(Twist, '/input', 10)
-	subscription = g_node.create_subscription(Twist, '/cmd_vel', callback, 10)
+	pub = g_node.create_publisher(Twist, 'diff_drive/cmd_vel', 10)
+	subscription = g_node.create_subscription(Twist, '/cmd_vel_smoothed', callback, 10)
 	
 	subscription  # prevent unused variable warning
 	

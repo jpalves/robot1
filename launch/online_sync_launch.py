@@ -26,11 +26,11 @@ def generate_launch_description():
         "use_sim_time", default_value="true", description="Use simulation/Gazebo clock"
     )
 
-    #xtermprefix = "xterm -xrm 'XTerm*scrollBar:  true' -xrm 'xterm*rightScrollBar: true' -hold -geometry 1000x600 -sl 10000 -e"
+    xtermprefix = "xterm -xrm 'XTerm*scrollBar:  true' -xrm 'xterm*rightScrollBar: true' -hold -geometry 1000x600 -sl 10000 -e"
 
     start_sync_slam_toolbox_node = Node(
         parameters=[
-            get_package_share_directory("robot1") + "/params/mapper_params_online_sync.yaml",
+            get_package_share_directory("robot1") + "/config/mapper_params_online_sync.yaml",
             {"use_sim_time": use_sim_time},
         ],
         package="slam_toolbox",
