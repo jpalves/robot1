@@ -1,0 +1,513 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="default">
+    <gui>
+      <camera name="user_camera">
+        <pose>0 -18 8.0 0 0.523 1.5707</pose>
+      </camera>
+    </gui>
+    <light name="sun" type="directional">
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>0 0.5 -0.9</direction>
+    </light>
+
+    <light name="point_light" type="point">
+      <pose>0 -0.377195 6.59868 0 -0 0</pose>
+      <diffuse>0.784314 0.784314 0.784314 1</diffuse>
+      <specular>0.0980392 0.0980392 0.0980392 1</specular>
+      <attenuation>
+        <range>50</range>
+        <constant>0.8</constant>
+        <linear>0</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <direction>0 0 -1</direction>
+    </light>
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+   
+    <include>
+      <uri>model://cafe</uri>
+    </include>
+    <include>
+    	<name>tag1</name>
+    	<pose>2.2 0.1 0.2 0 0 3.1415927</pose>
+    	<uri>model://tag1</uri>
+    </include>
+    <include>
+    	<name>table1</name>
+    	<pose>3.2 0.0 0.2 0 0 -1.5708</pose>
+    	<uri>model://mesa</uri>
+    </include>
+    <include>
+    	<name>table2</name>
+    	<pose>3.22 0.20 0.2 0 0 1.5708</pose>
+    	<uri>model://mesa</uri>
+    </include>
+    
+    <include>
+    	<name>chair1</name>
+    	<pose>3.7 -0.2 0.2 0 0 1.5708</pose>
+    	<uri>model://chair_1</uri>
+    </include>
+    
+    <include>
+    	<name>chair2</name>
+    	<pose>3.7 1.0 0.2 0 0 -1.5708</pose>
+    	<uri>model://chair_1</uri>
+    </include>
+    <include>
+    	<name>chair3</name>
+    	<pose>2.7 -0.2 0.2 0 0 1.5708</pose>
+    	<uri>model://chair_1</uri>
+    </include>
+    
+    <include>
+    	<name>chair4</name>
+    	<pose>2.7 1.0 0.2 0 0 -1.5708</pose>
+    	<uri>model://chair_1</uri>
+    </include>
+    
+    <include>
+    	<name>table3</name>
+    	<pose>3.2 -3.0 0.2 0 0 -1.5708</pose>
+    	<uri>model://mesa</uri>
+    </include>
+    <include>
+    	<name>table4</name>
+    	<pose>3.22 -2.8 0.2 0 0 1.5708</pose>
+    	<uri>model://mesa</uri>
+    </include>
+    <include>
+    	<name>tag2</name>
+    	<pose>2.2 -2.9 0.2 0 0 3.1415927</pose>
+    	<uri>model://tag2</uri>
+    </include>
+    <include>
+    	<name>chair5</name>
+    	<pose>3.7 -1.9 0.2 0 0 -1.5708</pose>
+    	<uri>model://chair_1</uri>
+    </include>
+    
+    <include>
+    	<name>chair6</name>
+    	<pose>3.7 -4.1 0.2 0 0  1.5708</pose>
+    	<uri>model://chair_1</uri>
+    </include>
+    <include>
+    	<name>chair7</name>
+    	<pose>2.7 -1.9 0.2 0 0 -1.5708</pose>
+    	<uri>model://chair_1</uri>
+    </include>
+    
+    <include>
+    	<name>chair8</name>
+    	<pose>2.7 -4.1 0.2 0 0  1.5708</pose>
+    	<uri>model://chair_1</uri>
+    </include>
+    
+    <include>
+    	<name>table5</name>
+    	<pose>3.2 -6.0 0.2 0 0 -1.5708</pose>
+    	<uri>model://mesa</uri>
+    </include>
+    <include>
+    	<name>table6</name>
+    	<pose>3.22 -5.8 0.2 0 0 1.5708</pose>
+    	<uri>model://mesa</uri>
+    </include>
+    <include>
+    	<name>tag3</name>
+    	<pose>2.2 -5.9 0.2 0 0 3.1415927</pose>
+    	<uri>model://tag3</uri>
+    </include>
+    <include>
+    	<name>chair9</name>
+    	<pose>3.7 -4.9 0.2 0 0 -1.5708</pose>
+    	<uri>model://chair_1</uri>
+    </include>
+    
+    <include>
+    	<name>chair10</name>
+    	<pose>3.7 -7.1 0.2 0 0  1.5708</pose>
+    	<uri>model://chair_1</uri>
+    </include>
+    <include>
+    	<name>chair11</name>
+    	<pose>2.7 -4.9 0.2 0 0 -1.5708</pose>
+    	<uri>model://chair_1</uri>
+    </include>
+    
+    <include>
+    	<name>chair12</name>
+    	<pose>2.7 -7.1 0.2 0 0  1.5708</pose>
+    	<uri>model://chair_1</uri>
+    </include>
+    
+    <include>
+    	<name>table7</name>
+    	<pose>3.2 -9.0 0.2 0 0 -1.5708</pose>
+    	<uri>model://mesa</uri>
+    </include>
+    <include>
+    	<name>table8</name>
+    	<pose>3.22 -8.8 0.2 0 0 1.5708</pose>
+    	<uri>model://mesa</uri>
+    </include>
+    <include>
+    	<name>tag4</name>
+    	<pose>2.2 -8.9 0.2 0 0 3.1415927</pose>
+    	<uri>model://tag4</uri>
+    </include>
+    <include>
+    	<name>chair13</name>
+    	<pose>3.7 -7.9 0.2 0 0 -1.5708</pose>
+    	<uri>model://chair_1</uri>
+    </include>
+    
+    <include>
+    	<name>chair14</name>
+    	<pose>3.7 -10.1 0.2 0 0  1.5708</pose>
+    	<uri>model://chair_1</uri>
+    </include>
+    <include>
+    	<name>chair15</name>
+    	<pose>2.7 -7.9 0.2 0 0 -1.5708</pose>
+    	<uri>model://chair_1</uri>
+    </include>
+    
+    <include>
+    	<name>chair17</name>
+    	<pose>2.7 -10.1 0.2 0 0  1.5708</pose>
+    	<uri>model://chair_1</uri>
+    </include>
+    
+    <include>
+    	<name>mesa9</name>
+    	<pose>0.0 0.0 0.2 0 0 0</pose>
+    	<uri>model://table_dining</uri>
+    </include>
+    <include>
+    	<name>chair16</name>
+    	<pose>0.0 -10.1 0.2 0 0  1.5708</pose>
+    	<uri>model://chair_1</uri>
+    </include>
+    
+    <include>
+    	<name>mesa10</name>
+    	<pose>0.0 -3.0 0.2 0 0 0</pose>
+    	<uri>model://table_dining</uri>
+    </include>
+    <include>
+    	<name>chair18</name>
+    	<pose>0.0 -7.1 0.2 0 0  1.5708</pose>
+    	<uri>model://chair_1</uri>
+    </include>
+    <include>
+    	<name>mesa11</name>
+    	<pose>0.0 -6.0 0.2 0 0 0</pose>
+    	<uri>model://table_dining</uri>
+    </include>
+    <include>
+    	<name>chair19</name>
+    	<pose>0.0 -4.1 0.2 0 0  1.5708</pose>
+    	<uri>model://chair_1</uri>
+    </include>
+    <include>
+    	<name>mesa12</name>
+    	<pose>0.0 -9.0 0.2 0 0 0</pose>
+    	<uri>model://table_dining</uri>
+    </include>
+    <include>
+    	<name>chair20</name>
+    	<pose>0.0 -0.1 0.2 0 0  1.5708</pose>
+    	<uri>model://chair_1</uri>
+    </include>
+    <include>
+    	<name>sofa1</name>
+    	<pose>-2.0 -8.0 0.2 0 0 -1.5708</pose>
+    	<uri>model://sofa_set_1</uri>
+    </include>
+    <include>
+    	<name>mesa_entrada</name>
+    	<pose>-3.8 -8.0 0.2 0 0 0.0</pose>
+    	<uri>model://table_conference_3</uri>
+    </include>
+    <include>
+    	<name>sofa2</name>
+    	<pose>-2.0 -2.0 0.2 0 0 -1.5708</pose>
+    	<uri>model://chair_set_1</uri>
+    </include>
+<!-- 
+    <include>
+      <name>table1</name>
+      <pose>0.5 -1.6 0.2 0 0 0</pose>
+      <uri>model://cafe_table</uri>
+    </include>
+
+    <include>
+      <name>table2</name>
+      <pose>2.4 -5.5 0.2 0 0 0</pose>
+      <uri>model://cafe_table</uri>
+    </include>
+
+    <include>
+      <name>table3</name>
+      <pose>-1.5 -5.5 0.2 0 0 0</pose>
+      <uri>model://cafe_table</uri>
+    </include>
+
+    <include>
+      <name>table4</name>
+      <pose>2.4 -9 0.2 0 0 0</pose>
+      <uri>model://cafe_table</uri>
+    </include>
+
+    <include>
+      <name>table5</name>
+      <pose>-1.5 -9 0.2 0 0 0</pose>
+      <uri>model://cafe_table</uri>
+    </include>
+-->
+    <!-- Usage: modify the <pose> elements of each actor to change their
+         starting location. Modify the <target> elements of each actor to
+         change their destination. The <target_weight> can be used to
+         tune the vector field used by the ActorPlugin to control the Actor. -->
+    <actor name="actor1">
+      <pose>0 -4 1.25 0 0 0</pose>
+      <skin>
+        <filename>file://media/models/walk.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>file://media/models/walk.dae</filename>
+        <scale>1.000000</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      	<script>
+        <loop>true</loop>
+        <delay_start>0.1</delay_start>
+        <auto_start>true</auto_start>
+        <trajectory id="0" type="stand">
+          <waypoint>
+            <time>0</time>
+            <pose>0 0 1.0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>1</time>
+            <pose>2 0 1.0 0 0 0</pose>
+          </waypoint>
+        </trajectory>
+        </script>
+      <plugin name="actor1_plugin" filename="libActorPlugin.so">
+        <!--<altura>1.2138</altura>-->
+        <target>0 -5 1.2138</target>
+        <target_weight>1.15</target_weight>
+        <obstacle_weight>1.8</obstacle_weight>
+        <animation_factor>5.1</animation_factor>
+        <!-- Usage: Modify the set of models that the vector field should
+             ignore when moving the actor -->
+        <ignore_obstacles>
+          <model>cafe</model>
+          <model>ground_plane</model>
+        </ignore_obstacles>
+      </plugin>
+    </actor>
+<!--
+    <actor name="actor_test">
+      <pose>0 0 1.25 0 0 0</pose>
+      <skin>
+        <filename>meshes/walk.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="gesture">
+        <filename>meshes/gesture.bvh</filename>
+        <scale>0.055</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <animation name="walk">
+        <filename>meshes/walk.dae</filename>
+        <scale>1.0</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <animation name="moonwalk">
+        <filename>meshes/moonwalk.dae</filename>
+        <scale>1.0</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <animation name="run">
+        <filename>meshes/run.dae</filename>
+        <scale>1.0</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <animation name="stand">
+        <filename>meshes/stand.dae</filename>
+        <scale>1.0</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <animation name="sit_down">
+        <filename>meshes/sit_down.dae</filename>
+        <scale>1.0</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <animation name="sitting">
+        <filename>meshes/sitting.dae</filename>
+        <scale>1.0</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <animation name="stand_up">
+        <filename>meshes/stand_up.dae</filename>
+        <scale>1.0</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <script>
+        <loop>true</loop>
+        <delay_start>1.0</delay_start>
+        <auto_start>true</auto_start>
+        <trajectory id="0" type="stand">
+          <waypoint>
+            <time>0</time>
+            <pose>0 0 1.0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>3</time>
+            <pose>0 0 1.0 0 0 0</pose>
+          </waypoint>
+        </trajectory>
+        <trajectory id="1" type="sit_down">
+          <waypoint>
+            <time>0</time>
+            <pose>0 0 1.0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>3</time>
+            <pose>0 0 0.6 0 0 0</pose>
+          </waypoint>
+        </trajectory>
+        <trajectory id="2" type="sitting">
+          <waypoint>
+            <time>0</time>
+            <pose>0 0 0.6 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>4</time>
+            <pose>0 0 0.6 0 0 0</pose>
+          </waypoint>
+        </trajectory>
+        <trajectory id="3" type="stand_up">
+          <waypoint>
+            <time>0</time>
+            <pose>0 0 0.6 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>3</time>
+            <pose>0 0 1.0 0 0 0</pose>
+          </waypoint>
+        </trajectory>
+        <trajectory id="4" type="gesture">
+          <waypoint>
+            <time>0</time>
+            <pose>0 0 1.0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>6</time>
+            <pose>0 0 1.0 0 0 0</pose>
+          </waypoint>
+        </trajectory>
+        <trajectory id="5" type="walk">
+          <waypoint>
+            <time>0</time>
+            <pose>0 0 1.0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>4</time>
+            <pose>4 0 1.0 0 0 0</pose>
+          </waypoint>
+        </trajectory>
+        <trajectory id="6" type="stand">
+          <waypoint>
+            <time>0</time>
+            <pose>4 0 1.0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>2</time>
+            <pose>4 0 1.0 0 0 -1.57</pose>
+          </waypoint>
+        </trajectory>
+        <trajectory id="7" type="run">
+          <waypoint>
+            <time>0</time>
+            <pose>4 0 1.0 0 0 -1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>4</time>
+            <pose>4 -4 1.0 0 0 -1.57</pose>
+          </waypoint>
+        </trajectory>
+        <trajectory id="8" type="stand">
+          <waypoint>
+            <time>0</time>
+            <pose>4 -4 1.0 0 0 -1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>2</time>
+            <pose>4 -4 1.0 0 0 -3.14</pose>
+          </waypoint>
+        </trajectory>
+        <trajectory id="9" type="run">
+          <waypoint>
+            <time>0</time>
+            <pose>4 -4 1.0 0 0 -3.14</pose>
+          </waypoint>
+          <waypoint>
+            <time>4</time>
+            <pose>0 -4 1.0 0 0 -3.14</pose>
+          </waypoint>
+        </trajectory>
+        <trajectory id="10" type="stand">
+          <waypoint>
+            <time>0</time>
+            <pose>0 -4 1.0 0 0 -3.14</pose>
+          </waypoint>
+          <waypoint>
+            <time>2</time>
+            <pose>0 -4 1.0 0 0 -4.71</pose>
+          </waypoint>
+        </trajectory>
+        <trajectory id="11" type="walk">
+          <waypoint>
+            <time>0</time>
+            <pose>0 -4 1.0 0 0 -4.71</pose>
+          </waypoint>
+          <waypoint>
+            <time>4</time>
+            <pose>0 0 1.0 0 0 -4.71</pose>
+          </waypoint>
+        </trajectory>
+        <trajectory id="12" type="stand">
+          <waypoint>
+            <time>0</time>
+            <pose>0 0 1.0 0 0 -4.71</pose>
+          </waypoint>
+          <waypoint>
+            <time>2</time>
+            <pose>0 0 1.0 0 0 -6.28</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+-->
+  </world>
+</sdf>

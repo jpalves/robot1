@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+
+    <robot>
+        <!-- camera -->
+        <gazebo reference="camera_link_R">
+        <sensor type="camera" name="camera_R">
+            <update_rate>30.0</update_rate>
+            <camera name="head">
+            <horizontal_fov>1.3962634</horizontal_fov>
+            <image>
+                <width>720</width>
+                <height>480</height>
+                <format>R8G8B8</format>
+            </image>
+            <clip>
+                <near>0.02</near>
+                <far>300</far>
+            </clip>
+            <noise>
+                <type>gaussian</type>
+                <!-- Noise is sampled independently per pixel on each frame.
+                    That pixel's noise value is added to each of its color
+                    channels, which at that point lie in the range [0,1]. -->
+                <mean>0.0</mean>
+                <stddev>0.007</stddev>
+            </noise>
+            </camera>
+            <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+            <alwaysOn>true</alwaysOn>
+            <updateRate>0.0</updateRate>
+            <cameraName>bot/camera_R</cameraName>
+            <imageTopicName>image_raw_R</imageTopicName>
+            <cameraInfoTopicName>camera_R_info</cameraInfoTopicName>
+            <frameName>camera_link_R</frameName>
+            <hackBaseline>0.07</hackBaseline>
+            <distortionK1>0.0</distortionK1>
+            <distortionK2>0.0</distortionK2>
+            <distortionK3>0.0</distortionK3>
+            <distortionT1>0.0</distortionT1>
+            <distortionT2>0.0</distortionT2>
+            </plugin>
+        </sensor>
+        </gazebo>
+
+
+        <gazebo reference="camera_link_L">
+        <sensor type="camera" name="camera_L">
+            <update_rate>30.0</update_rate>
+            <camera name="head">
+            <horizontal_fov>1.3962634</horizontal_fov>
+            <image>
+                <width>720</width>
+                <height>480</height>
+                <format>R8G8B8</format>
+            </image>
+            <clip>
+                <near>0.02</near>
+                <far>300</far>
+            </clip>
+            <noise>
+                <type>gaussian</type>
+                <!-- Noise is sampled independently per pixel on each frame.
+                    That pixel's noise value is added to each of its color
+                    channels, which at that point lie in the range [0,1]. -->
+                <mean>0.0</mean>
+                <stddev>0.007</stddev>
+            </noise>
+            </camera>
+            <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+            <alwaysOn>true</alwaysOn>
+            <updateRate>0.0</updateRate>
+            <cameraName>bot/camera_L</cameraName>
+            <imageTopicName>image_raw_L</imageTopicName>
+            <cameraInfoTopicName>camera_L_info</cameraInfoTopicName>
+            <frameName>camera_link_L</frameName>
+            <hackBaseline>0.07</hackBaseline>
+            <distortionK1>0.0</distortionK1>
+            <distortionK2>0.0</distortionK2>
+            <distortionK3>0.0</distortionK3>
+            <distortionT1>0.0</distortionT1>
+            <distortionT2>0.0</distortionT2>
+            </plugin>
+        </sensor>
+        </gazebo>
+
+
+        <gazebo>
+        <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+
+            <!-- Plugin update rate in Hz -->
+            <updateRate>10</updateRate>
+
+            <!-- Name of left joint, defaults to `left_joint` -->
+            <left_joint>left_wheel_hinge</left_joint>
+
+            <!-- Name of right joint, defaults to `right_joint` -->
+            <right_joint>right_wheel_hinge</right_joint>
+
+            <!-- The distance from the center of one wheel to the other, in meters, defaults to 0.34 m -->
+            <wheel_separation>0.4</wheel_separation>
+
+            <!-- Diameter of the wheels, in meters, defaults to 0.15 m -->
+            <wheel_diameter>0.1</wheel_diameter>
+
+            <!-- Wheel acceleration, in rad/s^2, defaults to 0.0 rad/s^2 -->
+            <wheel_acceleration>1.0</wheel_acceleration>
+
+            <!-- Maximum torque which the wheels can produce, in Nm, defaults to 5 Nm -->
+            <wheel_torque>10</wheel_torque>
+
+            <!-- Topic to receive geometry_msgs/Twist message commands, defaults to `cmd_vel` -->
+            <command_topic>cmd_vel</command_topic>
+
+            <!-- Topic to publish nav_msgs/Odometry messages, defaults to `odom` -->
+            <odometry_topic>/odom</odometry_topic>
+
+            <!-- Odometry frame, defaults to `odom` -->
+            <odometry_frame>odom</odometry_frame>
+
+            <!-- Robot frame to calculate odometry from, defaults to `base_footprint` -->
+            <robot_baseframe>chassis</robot_baseframe>
+
+            <!-- Odometry source, 0 for ENCODER, 1 for WORLD, defaults to WORLD -->
+            <odometry_source>1</odometry_source>
+            <ros>
+   		<remapping>/cmd_vel:=diff_drive/cmd_vel</remapping>
+  	    </ros>
+            <!-- Set to true to publish transforms for the wheel links, defaults to false -->
+            <publish_odom>1</publish_odom>
+            <publish_odom_tf>1</publish_odom_tf>
+            <publish_wheel_tf>0</publish_wheel_tf>
+        </plugin>
+        </gazebo>
+        
+        <gazebo reference= "chassis">
+            <material>
+                Gazebo/White
+            </material>
+        </gazebo>
+
+        <gazebo reference= "right_wheel">
+            <material>
+                Gazebo/Blue
+            </material>
+        </gazebo>
+        <gazebo reference= "left_wheel">
+            <material>
+                Gazebo/Blue
+            </material>
+        </gazebo>
+        
+        <gazebo reference= "camera_link">
+            <material>
+                Gazebo/Gray
+            </material>
+        </gazebo>
+<!-- hokuyo -->
+<gazebo reference="hokuyo_link">
+    <sensor type="gpu_ray" name="head_hokuyo_sensor">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>40</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>1</resolution>
+            <min_angle>-1.570796</min_angle>
+            <max_angle>1.570796</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>30.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise parameters based on published spec for Hokuyo laser
+               achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
+               stddev of 0.01m will put 99.7% of samples within 0.03m of the true
+               reading. -->
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="base_scan" filename="ibgazebo_ros_ray_sensor.so">
+        <ros>
+              	<remapping>~/out:=scan</remapping>
+          </ros>
+          <output_type>sensor_msgs/LaserScan</output_type>
+          <frame_name>base_scan</frame_name>
+          <base_frame_id>base_link</base_frame_id>
+      </plugin>
+    </sensor>
+  </gazebo>
+</robot>

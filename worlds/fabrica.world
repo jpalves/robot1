@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.5">
+  <world name="fabrica">
+  	<gravity>0 0 -9.8</gravity>
+    	<gui>
+      		<camera name="user_camera">
+        		<pose>0 0 4.0 0 0.523 1.5707</pose>
+      		</camera>
+    	</gui>
+    	<light name="sun" type="directional">
+      		<cast_shadows>1</cast_shadows>
+      		<pose>0 0 10 0 -0 0</pose>
+      		<diffuse>0.9 0.9 0.9 1</diffuse>
+      		<specular>0.2 0.2 0.2 1</specular>
+      		<attenuation>
+        		<range>1000</range>
+        		<constant>0.5</constant>
+        		<linear>0.01</linear>
+        		<quadratic>0.001</quadratic>
+      		</attenuation>
+      		<direction>0 0.8 -0.58</direction>
+    	</light>
+
+    	<light name="point_light" type="point">
+      		<pose>0 -0.377195 6.59868 0 -0 0</pose>
+      		<diffuse>0.784314 0.784314 0.784314 1</diffuse>
+      		<specular>0.0980392 0.0980392 0.0980392 1</specular>
+      		<attenuation>
+        		<range>50</range>
+        		<constant>0.8</constant>
+        		<linear>0</linear>
+        		<quadratic>0.001</quadratic>
+      		</attenuation>
+      		<cast_shadows>0</cast_shadows>
+      		<direction>0 0 -1</direction>
+    	</light>
+    
+   	<include>
+      		<uri>model://ground_plane</uri>
+   	</include>
+   
+  	<include>
+      		<uri>
+        		model://Depot
+      		</uri>
+      		<pose>-2.19009 1.09982 0 0 0 0</pose>
+    	</include>
+    
+    	<model name='depot_collision'>
+      		<static>1</static>
+      		<pose>-2.19009 1.09982 0 0 0 0</pose>
+      		<link name='collision_link'>
+        		<pose>0 0 0 0 0 0</pose>
+        		<collision name='wall1'>
+          			<pose>0 -7.6129 4.5 0 0 0</pose>
+          			<geometry>
+            				<box>
+              					<size>30.167 0.08 9</size>
+            				</box>
+          			</geometry>
+        		</collision>
+        		<collision name='wall2'>
+          			<pose>0 7.2875 4.5 0 0 0</pose>
+          			<geometry>
+           	 			<box>
+              					<size>30.167 0.08 9</size>
+            				</box>
+          			</geometry>
+        		</collision>
+        		<collision name='wall3'>
+          			<pose>-15 0 4.5 0 0 0</pose>
+          			<geometry>
+            				<box>
+              					<size>0.08 15.360 9</size>
+            				</box>
+          			</geometry>
+        		</collision>
+        		<collision name='wall4'>
+          			<pose>15 0 4.5 0 0 0</pose>
+          			<geometry>
+            				<box>
+              					<size>0.08 15.360 9</size>
+            				</box>
+          			</geometry>
+        		</collision>
+
+        		<collision name='pilar1'>
+          			<pose>-7.5402 3.6151 1 0 0 0</pose>
+          			<geometry>
+            				<box>
+              					<size>0.465 0.465 2</size>
+            				</box>
+          			</geometry>
+        		</collision>
+        		<collision name='pilar2'>
+          			<pose>7.4575 3.6151 1 0 0 0</pose>
+          			<geometry>
+            				<box>
+              					<size>0.465 0.465 2</size>
+            				</box>
+          			</geometry>
+        		</collision>
+        		<collision name='pilar3'>
+          			<pose>-7.5402 -3.8857 1 0 0 0</pose>
+          			<geometry>
+            				<box>
+              					<size>0.465 0.465 2</size>
+            				</box>
+          			</geometry>
+        		</collision>
+        		<collision name='pilar4'>
+          			<pose>7.4575 -3.8857 1 0 0 0</pose>
+          			<geometry>
+            				<box>
+              					<size>0.465 0.465 2</size>
+            				</box>
+          			</geometry>
+        		</collision>
+       
+        		<collision name='stairs'>
+          			<pose>13.018 3.1652 0.25 0 0 0</pose>
+          			<geometry>
+            				<box>
+              					<size>1.299 0.6 0.5</size>
+            				</box>
+          			</geometry>
+       	 		</collision>
+      	</link>
+    </model>
+   
+    <include>
+ 	<uri>model://cnc2</uri>
+    	<pose>0 5 1.0 0 0 0</pose>
+    </include>
+    
+    <include>
+ 	<uri>model://cnc</uri>
+    	<pose>-5 5 1.0 0 0 0</pose>
+    </include>
+    
+    <include>
+ 	<uri>model://cnc3</uri>
+    	<pose>0 0 1.0 0 0 0</pose>
+    </include>
+    
+    <include>
+ 	<uri>model://cnc4</uri>
+    	<pose>-5 0 1.0 0 0 0</pose>
+    </include>
+    
+    <include>
+ 	<uri>model://cnc5</uri>
+    	<pose>-12 5 1.0 0 0 0</pose>
+    </include>
+    
+     <include>
+ 	<uri>model://cnc6</uri>
+    	<pose>-12 0 1.0 0 0 0</pose>
+    </include>
+    
+    <include>
+ 	<uri>model://paletes</uri>
+    	<pose>10 0 -0.0 0 0 0</pose>
+    </include>
+    
+    <include>
+ 	<uri>model://paletesvazias</uri>
+    	<pose>0 -5 -0.0 0 0 1.5708</pose>
+    </include>
+    
+    <include>
+      <uri>model://charging_dock</uri>
+      <static>true</static>
+      <pose>5 0 0.0 0 0 0</pose>
+    </include>
+    <actor name="actor1">
+    	<pose>4 0 1.0 0 0 0</pose>
+      	<skin>
+        	<filename>file://media/models/walk.dae</filename>
+        	<scale>1.0</scale>
+      	</skin>
+      	<animation name="walking">
+        	<filename>file://media/models/walk.dae</filename>
+        	<scale>1.000000</scale>
+        	<interpolate_x>true</interpolate_x>
+      	</animation>
+
+      	<plugin name="actor1_plugin" filename="libPedestrianSFMPlugin.so">
+        	<goal_weight>2.0</goal_weight>
+        	<obstacle_weight>10.0</obstacle_weight> <!--Original: 80.0, Modified 20.0, Farina: 10.0-->
+        	<social_weight>15</social_weight> <!--2.1-->
+        	<group_gaze_weight>0.0</group_gaze_weight>
+        	<group_coh_weight>0.0</group_coh_weight>
+        	<group_rep_weight>0.0</group_rep_weight>
+        	<altura>1.0</altura>
+        	<velocity>0.9</velocity>
+        	<radius>0.4</radius> <!-- 0.4 -->
+        	<animation_factor>5.1</animation_factor>
+        	<animation_name>walking</animation_name>
+        	<people_distance>6.0</people_distance>
+        	<ignore_obstacles>
+          		<model>ground_plane</model>
+          		<model>fabrica</model>
+        	</ignore_obstacles>
+        	<trajectory>
+          		<cyclic>true</cyclic>
+          		<waypoint>-10 -4 0</waypoint>
+          		<!-- <waypoint>0 5 0</waypoint> -->
+          		<!-- <waypoint>0 -1.25 0</waypoint> -->
+          		<waypoint>-4 -1.25 0</waypoint>
+          		<waypoint>-8 1.25 0</waypoint>
+          		<!-- <waypoint>0 1.25 0</waypoint> -->
+          		<waypoint>8 2 0</waypoint>
+        	</trajectory>
+      </plugin>
+     </actor>
+  </world>
+</sdf>
